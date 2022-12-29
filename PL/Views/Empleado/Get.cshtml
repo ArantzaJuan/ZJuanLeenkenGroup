@@ -5,17 +5,22 @@
 }
 
 <h1>Get</h1>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="~/js/Empleado/EmpleadoCRUD.js"></script>
 
-<script type="text/javascript" src="~/js/Empleado/CRUDEmpleado.js"></script>
-<table class="table   table-hover table-bordered border-success table-responsive" id="#tblEmpleado">
+<div class="col-md-1" style="padding-left:100px">
+    <button type="button" class="btn btn-success" id="btnAdd" onclick="Modal()">Agregar</button>
+</div>
+
+<table class="table   table-hover table-bordered border-success table-responsive" id="tblEmpleado">
     <thead>
         <tr>
             <td>Editar</td>
 
             <td style="display :none;">id</td>
 
-            <td>Nombre</td>
             <td>Numero Nomina</td>
+            <td>Nombre</td>
             <td>Apellido Paterno</td>
             <td>Apellido Materno</td>
             <td>Estado</td>
@@ -24,5 +29,43 @@
         </tr>
     </thead>
     <tbody></tbody>
-   </thead>
    </table>
+<div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModelLabel" aria-hidden="true">
+   <div class=" modal-dialog " >
+       <div class="modal-content">
+           <div class="modal-header">
+            <h4 class="modal-title" id="myModelLabel">Empleado</h4>
+               <button type="button" class="close" data-dismiss="modal">X</button>
+            
+           </div>
+
+           <div class="modal-body">
+               <form>
+                   <div class="form-group">
+                       <input type="text" class="form-control" id="txtIdEmpleado" placeholder="IdEmpleado" disabled="disabled" />
+                   </div>
+                <div class="form-group">
+                    <label class="Numero de nomina"> Numero de nomina </label>
+                    <input type="text" class="form-control" id="txtNumeroNomina" placeholder="NumeroNomina" disabled="disabled" />
+                </div>
+                <div class="form-group">
+                    <label class="Numero de nomina"> Nombre </label>
+                    <input type="text" class="form-control" id="txtNombre" placeholder="Nombre" />
+                </div>
+                <div class="form-group">
+                    <label class="Numero de nomina">Apellido paterno </label>
+                    <input type="text" class="form-control" id="txtApellidoPaterno" placeholder="ApellidoPaterno" />
+                </div> 
+                <div class="form-group">
+                    <label class="Numero de nomina"> Apellido Materno </label>
+                    <input type="text" class="form-control" id="txtApellidoPaterno" placeholder="ApellidoPaterno" />
+                </div>
+                <div class="form-group">
+                    <label class="Numero de nomina"> Estado </label>
+                    <select type="text" class="form-control" id="txtEstdo" placeholder="Estado" />
+                </div>
+               </form>
+           </div>
+       </div>
+   </div>
+</div>
