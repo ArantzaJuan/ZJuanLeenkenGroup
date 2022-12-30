@@ -28,6 +28,26 @@ namespace SL.Controllers
         }
 
 
+        [EnableCors("API")]
+        [Route("Get")]
+        [HttpGet]
+        public IActionResult GetAllEF()
+        {
+            ML.EntidadFederativa entidadFederativa = new ML.EntidadFederativa();
+
+            ML.Result result = BL.Entidad.GetAllEntidades();
+
+            if (result.Correct)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return NotFound();
+            }
+            
+        }
+
         // GET: EmpleadoController/Details/5
         [HttpGet("GetById/{IdEmpleado}")]
         public IActionResult Get(int IdEmpleado)
